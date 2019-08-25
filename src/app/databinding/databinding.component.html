@@ -1,0 +1,54 @@
+<!-- Interpolation -->
+<h1>{{pageTitle}}</h1>
+
+
+<!-- property binding -->
+
+
+<img [src]="imgURL" /><br />
+<!-- <img src="{{imgURL}}" /> -->
+<p>databinding works!</p>
+<div>
+<button (click)="changeContent()">Change content</button>
+</div>
+
+<h2>Two way data binding</h2>
+<!-- <form>
+    <input type="text" [(ngModel)]="username" name="username"  placeholder="Input Value" >
+</form> -->
+<!-- {{username}} -->
+
+<ul>
+    <li *ngFor="let student of students">
+        {{student}}
+    </li>
+</ul>
+
+<!-- *ngFor Loop-->
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let teacher of teachers; let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{teacher.name}}</td>
+            <td>{{teacher.age}}</td>
+            <td>{{teacher.add}}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<!-- *ngIf-->
+
+<div *ngIf="isLogin,else logout">
+    Welcome Page
+</div>
+<ng-template #logout>
+<div>Please Login</div>
+</ng-template>
